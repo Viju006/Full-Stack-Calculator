@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A simple full-stack calculator built with Flask and Python." />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Calculator.css') }}">
+</head>
+
+<body>
+    <div id="outline">
+        <div class="display">
+            <input type="text" id="display" disabled value="0">
+        </div>
+        <div class="buttons">
+            <div class="R1 C1 items" onclick="appendNumber('7')">7</div>
+            <div class="R1 C2 items" onclick="appendNumber('8')">8</div>
+            <div class="R1 C3 items" onclick="appendNumber('9')">9</div>
+            <div class="R1 C4 items operator" onclick="setOperator('/')">&divide;</div>
+
+            <div class="R2 C1 items" onclick="appendNumber('4')">4</div>
+            <div class="R2 C2 items" onclick="appendNumber('5')">5</div>
+            <div class="R2 C3 items" onclick="appendNumber('6')">6</div>
+            <div class="R2 C4 items operator" onclick="setOperator('*')">&times;</div>
+
+            <div class="R3 C1 items" onclick="appendNumber('1')">1</div>
+            <div class="R3 C2 items" onclick="appendNumber('2')">2</div>
+            <div class="R3 C3 items" onclick="appendNumber('3')">3</div>
+            <div class="R3 C4 items operator" onclick="setOperator('-')">-</div>
+
+            <div class="R4 C1 items clear" onclick="clearDisplay()">C</div>
+            <div class="R4 C2 items" onclick="appendNumber('0')">0</div>
+            <div class="R4 C3 items" onclick="appendNumber('.')">.</div>
+            <div class="R4 C4 items backspace" onclick="backspace()">⌫</div>
+
+            <div class="R5 C1 C2 items operator" onclick="setOperator('+')">+</div>
+            <div class="R5 C3 C4 items equals" onclick="calculateResult()">=</div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='Calculator.js') }}"></script>
+</body>
+
+</html>
